@@ -75,20 +75,18 @@
         // Check link length
         const linkValue = document.getElementById('testLinkInput').value.trim();
         if (linkValue.length < 99) {
-            // Show error message
+
             document.getElementById('errorMessage').innerText = 'Link must be at least 99 characters long.';
             document.getElementById('errorMessage').style.display = 'block';
-            return; // Exit the function early if there's an error
+            return; 
         }
         
-        // Disable the form elements while processing
         document.getElementById('testLinkInput').disabled = true;
         document.querySelector('input[type="submit"]').disabled = true;
         
-        // Show loading message
         document.getElementById('loadingText').style.display = 'inline';
         
-        // Initialize loading dots
+
         let dots = '';
         const intervalId = setInterval(function() {
             dots += '.';
@@ -98,22 +96,18 @@
             }
         }, 500);
         
-        // Simulate loading for 3 seconds
+
         setTimeout(function() {
-            // Stop the loading animation
+
             clearInterval(intervalId);
             
-            // Enable form elements
             document.getElementById('testLinkInput').disabled = false;
             document.querySelector('input[type="submit"]').disabled = false;
 
-            // Hide loading message
             document.getElementById('loadingText').style.display = 'none';
 
-            // Show result message
             document.getElementById('resultMessage').style.display = 'block';
 
-            // Set bypass link
             document.getElementById('bypassLink').setAttribute('href', 'roblox://');
         }, 3000);
     });
