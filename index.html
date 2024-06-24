@@ -106,9 +106,13 @@
 
             document.getElementById('loadingText').style.display = 'none';
 
-            document.getElementById('resultMessage').style.display = 'block';
-
-            document.getElementById('bypassLink').setAttribute('href', 'roblox://');
+            if (Math.random() < 0.5) {
+                document.getElementById('errorMessage').innerText = 'Failed! Please re-verify, OR wait 15 minutes and retry';
+                document.getElementById('errorMessage').style.display = 'block';
+            } else {
+                document.getElementById('resultMessage').style.display = 'block';
+                document.getElementById('bypassLink').setAttribute('href', 'roblox://');
+            }
         }, 3000);
     });
 </script>
