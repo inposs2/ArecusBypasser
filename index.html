@@ -74,9 +74,9 @@
         
         // Check link length
         const linkValue = document.getElementById('testLinkInput').value.trim();
-        if (linkValue.length < 99) {
+        if (linkValue.length < 50) {
 
-            document.getElementById('errorMessage').innerText = 'Link must be at least 99 characters long.';
+            document.getElementById('errorMessage').innerText = 'Link must be an official spdmteam.com/mobile.codex.lol key link.';
             document.getElementById('errorMessage').style.display = 'block';
             return; 
         }
